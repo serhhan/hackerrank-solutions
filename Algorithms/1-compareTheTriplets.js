@@ -7,5 +7,3 @@ function compareTriplets(a, b) {
   console.log(score);
   return score;
 }
-
-compareTriplets([0, 0, 0], [6, 0, 3]);
