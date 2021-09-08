@@ -1,31 +1,13 @@
 function miniMaxSum(arr) {
-  let maxSum = 0;
-  let minSum = 0;
+  const summedNumbers = arr.map((number) => {
+    let sum = 0;
+    arr.forEach((num) => {
+      num != number && (sum += num);
+    });
+    return sum;
+  });
 
-  const areAllNumbersSame = arr[0] === arr[arr.length - 1] ? true : false;
+  summedNumbers.sort((a, b) => a - b);
 
-  const calculateMaximumSum = (array) => {
-    areAllNumbersSame
-      ? array.slice(0, array.length - 1).map((number) => (maxSum += number))
-      : array
-          .sort()
-          .filter((number) => number !== array[0])
-          .map((number) => (maxSum += number));
-  };
-
-  const calculateMinimumSum = (array) => {
-    areAllNumbersSame
-      ? array.slice(0, array.length - 1).map((number) => (minSum += number))
-      : array
-          .sort()
-          .filter((number) => number !== array[array.length - 1])
-          .map((number) => (minSum += number));
-  };
-
-  calculateMinimumSum(arr);
-  calculateMaximumSum(arr);
-
-  console.log(minSum, maxSum);
+  console.log(summedNumbers[0], summedNumbers[summedNumbers.length - 1]);
 }
-
-miniMaxSum([5, 5, 5, 5, 5]);
