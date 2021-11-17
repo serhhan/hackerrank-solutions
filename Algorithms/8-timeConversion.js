@@ -7,5 +7,6 @@ function timeConversion(s) {
     : arr[0] == 12
     ? "00"
     : arr[0];
+
   return arr.join(":");
 }
