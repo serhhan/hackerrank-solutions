@@ -17,7 +17,7 @@ function birthday(s, d, m) {
     }
 
     if (total === sumGoal) {
-      divideWaysCount += 1;
+      divideWaysCount++;
     }
   }
 
