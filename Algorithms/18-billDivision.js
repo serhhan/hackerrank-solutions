@@ -1,20 +1,17 @@
 function bonAppetit(bill, k, b) {
-  const annaDidntEatIndex = k;
-  const annaContribute = b;
   const supposedBillForAnna = [...bill];
+  supposedBillForAnna.splice(k, 1);
+
   const brianWantsFromAnna = bill.reduce((a, b) => a + b, 0) / 2;
-
-  supposedBillForAnna.splice(annaDidntEatIndex, 1);
-
   const supposedPaymentForAnna =
     supposedBillForAnna.reduce((a, b) => a + b, 0) / 2;
 
   function calculateBills() {
-    if (annaContribute === supposedPaymentForAnna) {
-      return console.log("Bon Appetit");
+    if (b === supposedPaymentForAnna) {
+      console.log("Bon Appetit");
     } else {
       const finalBill = brianWantsFromAnna - supposedPaymentForAnna;
-      return console.log(finalBill);
+      console.log(finalBill);
     }
   }
 
