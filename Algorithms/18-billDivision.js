@@ -17,5 +17,3 @@ function bonAppetit(bill, k, b) {
 
   return calculateBills();
 }
-
-bonAppetit([3, 10, 30, 30, 30, 30], 2, 9);
