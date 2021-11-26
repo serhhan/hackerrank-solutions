@@ -22,5 +22,3 @@ function pickingNumbers(a) {
 
   return length;
 }
-
-pickingNumbers([8, -1, 0, 4, 3, 210, 21]);
