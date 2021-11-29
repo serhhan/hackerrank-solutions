@@ -1,7 +1,7 @@
 function pickingNumbers(a) {
   let array = a.sort((a, b) => a - b);
-
   let length = 0;
+
   while (array.length > 0) {
     let n = array[0];
     array.shift();
@@ -19,6 +19,5 @@ function pickingNumbers(a) {
       }
     }
   }
-
   return length;
 }
