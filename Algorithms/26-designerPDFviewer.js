@@ -33,7 +33,7 @@ function designerPdfViewer(h, word) {
 
   for (let i = 0; i < word.length; i++) {
     let index = alphabet.indexOf(word[i]);
-    let = wordHeights.push(h[index]);
+    wordHeights.push(h[index]);
   }
 
   tallestValue = Math.max(...wordHeights);
