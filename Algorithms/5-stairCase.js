@@ -3,7 +3,7 @@ function staircase(n) {
 
   for (let i = 1; i <= n; i++) {
     for (let j = n - 1; j >= i; j--) {
-      output += " ";
+      output += " "; //tersten sayıyor boşlu koyuyor
     }
 
     for (let h = 1; h <= i; h++) {

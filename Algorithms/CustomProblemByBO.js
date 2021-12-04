@@ -40,7 +40,45 @@ const findSameElements = (arr) => {
     }
   }
 
-  return console.log(counts);
+  return counts;
 };
 
-findSameElements([10, 10, 10, 10, 50, 20, -20]);
+const binarySearch = (array, target) => {
+  let startIndex = 0;
+  let endIndex = array.length - 1;
+
+  while (startIndex <= endIndex) {
+    let middleIndex = Math.floor((startIndex + endIndex) / 2);
+
+    if (target === array[middleIndex]) {
+      return console.log(middleIndex);
+    }
+
+    if (target > array[middleIndex]) {
+      startIndex = middleIndex + 1;
+    }
+
+    if (target < array[middleIndex]) {
+      endIndex = middleIndex - 1;
+    } else {
+      console.log("no same");
+    }
+  }
+
+  console.log("no result");
+};
+
+const climbingLeaderboard = (ranked, player) => {
+  const ranksRaw = findSameElements(ranked);
+  const ranks = [];
+
+  for (let i = 0; i < ranksRaw.length; i++) {
+    ranks.push(ranksRaw[i].value);
+  }
+
+  for (let i = 0; i < player.length; i++) {
+    for (let j = 0; j < ranks.length; i++) {}
+  }
+};
+
+binarySearch(sortElements([100, 50, 40, 20, 10]), 5);
