@@ -46,6 +46,7 @@ const findSameElements = (arr) => {
 const binarySearch = (array, target) => {
   let startIndex = 0;
   let endIndex = array.length - 1;
+  let lastIndex = array.length - 1;
 
   while (startIndex <= endIndex) {
     let middleIndex = Math.floor((startIndex + endIndex) / 2);
@@ -56,16 +57,16 @@ const binarySearch = (array, target) => {
 
     if (target > array[middleIndex]) {
       startIndex = middleIndex + 1;
+      lastIndex = middleIndex;
     }
 
     if (target < array[middleIndex]) {
       endIndex = middleIndex - 1;
-    } else {
-      console.log("no same");
+      lastIndex = middleIndex;
     }
   }
 
-  console.log("no result");
+  console.log(lastIndex);
 };
 
 const climbingLeaderboard = (ranked, player) => {
@@ -76,9 +77,7 @@ const climbingLeaderboard = (ranked, player) => {
     ranks.push(ranksRaw[i].value);
   }
 
-  for (let i = 0; i < player.length; i++) {
-    for (let j = 0; j < ranks.length; i++) {}
-  }
+  for (let i = 0; i < player.length; i++) {}
 };
 
-binarySearch(sortElements([100, 50, 40, 20, 10]), 5);
+binarySearch([100, 90, 80, 75, 60], 85);
