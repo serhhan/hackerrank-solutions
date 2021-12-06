@@ -46,38 +46,45 @@ const findSameElements = (arr) => {
 const binarySearch = (array, target) => {
   let startIndex = 0;
   let endIndex = array.length - 1;
-  let lastIndex = array.length - 1;
+  let rankOrder = array.length;
 
   while (startIndex <= endIndex) {
     let middleIndex = Math.floor((startIndex + endIndex) / 2);
 
     if (target === array[middleIndex]) {
       return console.log(middleIndex);
+      rankOrder = middleIndex;
     }
 
     if (target > array[middleIndex]) {
       startIndex = middleIndex + 1;
-      lastIndex = middleIndex;
+      rankOrder = middleIndex + 1;
     }
 
     if (target < array[middleIndex]) {
       endIndex = middleIndex - 1;
-      lastIndex = middleIndex;
+      rankOrder = middleIndex - 1;
     }
   }
+  const result = array.length - rankOrder === 0 ? 1 : array.length - rankOrder;
 
-  console.log(lastIndex);
+  return result;
 };
 
 const climbingLeaderboard = (ranked, player) => {
   const ranksRaw = findSameElements(ranked);
   const ranks = [];
+  const playersRank = [];
 
   for (let i = 0; i < ranksRaw.length; i++) {
     ranks.push(ranksRaw[i].value);
   }
 
-  for (let i = 0; i < player.length; i++) {}
+  for (let i = 0; i < player.length; i++) {
+    playersRank.push(binarySearch(ranked, player[i]));
+  }
+
+  console.log(playersRank);
 };
 
-binarySearch([100, 90, 80, 75, 60], 85);
+climbingLeaderboard([30, 60, 75, 80, 90, 110], [40, 40, 77, 95, 120]);
